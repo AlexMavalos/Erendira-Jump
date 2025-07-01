@@ -1,0 +1,86 @@
+:root{
+  --bg-purple:#2d003b;
+  --pink-soft:#ff9ad6;
+  --pink-strong:#ff47a3;
+  --pink-dark:#b3006b;
+}
+
+@font-face{
+  font-family:"PressStart";
+  src:url("https://fonts.gstatic.com/s/pressstart2p/v11/e3t4euO8H1U1a0TsIVn3zl0sKJHZ.ttf") format("truetype");
+}
+*{box-sizing:border-box;margin:0}
+
+body{
+  background:var(--bg-purple);
+  color:var(--pink-soft);
+  font-family:"PressStart",monospace;
+  display:flex; flex-direction:column; align-items:center;
+  min-height:100vh; overflow-x:hidden;
+}
+
+#title{
+  margin:22px 0 12px;
+  font-size:20px;
+  color:var(--pink-strong);
+  text-shadow:0 0 6px var(--pink-dark);
+}
+
+/* ----- wrapper ----- */
+.game-wrapper{position:relative; max-width:800px; width:100%;}
+#score{
+  position:absolute; top:6px; right:10px;
+  font-size:14px; color:#fff; text-shadow:0 0 4px var(--pink-dark);
+}
+#gameCanvas{
+  width:100%; height:auto;
+  border:2px solid var(--pink-soft);
+  background:#30184a;
+  image-rendering:pixelated;
+}
+
+/* ----- overlay inicio ----- */
+#startOverlay{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:18px; background:rgba(0,0,0,.6); color:#fff; text-align:center;
+}
+#startOverlay h2{font-size:18px; color:var(--pink-strong);}
+#startOverlay .love{font-size:12px; line-height:1.6;}
+#startOverlay ul{list-style:none; font-size:12px; line-height:1.5; text-align:left;}
+#startOverlay button{
+  padding:10px 24px; font-size:16px;
+  background:var(--pink-strong); color:#fff;
+  border:none; border-radius:8px; cursor:pointer;
+}
+#startOverlay button:active{transform:scale(.96);}
+
+/* ----- banner fin ----- */
+#banner{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  background:var(--pink-strong); color:#fff;
+  padding:20px 30px; font-size:20px;
+  border-radius:8px; box-shadow:0 0 12px var(--pink-dark);
+  text-align:center; transition:opacity .6s,transform .6s;
+}
+
+/* ----- botones extra ----- */
+#resetBtn{margin-top:24px; background:none; border:none; cursor:pointer;}
+#resetBtn img{width:96px; image-rendering:pixelated; transition:transform .15s;}
+#resetBtn:hover img{transform:scale(1.05);}
+
+#tapJump{
+  position:fixed; bottom:15px; right:15px;
+  padding:12px 22px; font-size:18px;
+  background:var(--pink-strong); color:#fff;
+  border:none; border-radius:10px; cursor:pointer;
+}
+#tapJump:active{transform:scale(.95);}
+
+#loveMsg{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font-size:18px; color:var(--pink-strong); transition:opacity .5s;
+}
+
+.hidden{opacity:0; pointer-events:none}
+.show{opacity:1!important}
