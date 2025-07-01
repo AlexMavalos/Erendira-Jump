@@ -84,3 +84,10 @@ body{
 
 .hidden{opacity:0; pointer-events:none}
 .show{opacity:1!important}
+
+#gameCanvas{
+  width:100%;         /* ya estaba, pero mantenlo */
+  height:auto;
+  max-width:800px;    /* límite en escritorio */
+  image-rendering:pixelated;
+}
