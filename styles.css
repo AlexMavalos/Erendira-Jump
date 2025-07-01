@@ -21,25 +21,24 @@ body{
 
 #title{
   margin:22px 0 12px;
-  font-size:20px;
-  color:var(--pink-strong);
+  font-size:20px; color:var(--pink-strong);
   text-shadow:0 0 6px var(--pink-dark);
 }
 
-/* ----- wrapper ----- */
+/* ---------- wrapper / marcador ---------- */
 .game-wrapper{position:relative; max-width:800px; width:100%;}
 #score{
   position:absolute; top:6px; right:10px;
   font-size:14px; color:#fff; text-shadow:0 0 4px var(--pink-dark);
 }
 #gameCanvas{
-  width:100%; height:auto;
+  width:100%; height:auto; max-width:800px;
   border:2px solid var(--pink-soft);
   background:#30184a;
   image-rendering:pixelated;
 }
 
-/* ----- overlay inicio ----- */
+/* ---------- overlay inicio ---------- */
 #startOverlay{
   position:absolute; inset:0;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -55,7 +54,7 @@ body{
 }
 #startOverlay button:active{transform:scale(.96);}
 
-/* ----- banner fin ----- */
+/* ---------- banner final ---------- */
 #banner{
   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
   background:var(--pink-strong); color:#fff;
@@ -63,8 +62,14 @@ body{
   border-radius:8px; box-shadow:0 0 12px var(--pink-dark);
   text-align:center; transition:opacity .6s,transform .6s;
 }
+#banner img{
+  display:block;
+  margin:18px auto 0;
+  width:80%; max-width:200px; height:auto;
+  border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,.4);
+}
 
-/* ----- botones extra ----- */
+/* ---------- botones ---------- */
 #resetBtn{margin-top:24px; background:none; border:none; cursor:pointer;}
 #resetBtn img{width:96px; image-rendering:pixelated; transition:transform .15s;}
 #resetBtn:hover img{transform:scale(1.05);}
@@ -84,10 +89,3 @@ body{
 
 .hidden{opacity:0; pointer-events:none}
 .show{opacity:1!important}
-
-#gameCanvas{
-  width:100%;         /* ya estaba, pero mantenlo */
-  height:auto;
-  max-width:800px;    /* límite en escritorio */
-  image-rendering:pixelated;
-}
